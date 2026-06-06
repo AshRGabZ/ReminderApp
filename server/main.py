@@ -125,8 +125,9 @@ Rules:
 """
 
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 def health():
+    # GET + HEAD so uptime monitors (which often send HEAD) get 200, not 405
     return {"status": "ok", "model": MODEL, "mock": MOCK}
 
 
