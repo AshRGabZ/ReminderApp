@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---- Node / Expo (mobile app) ----
+node_modules/
+mobile/.expo/
+mobile/dist/
+npm-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store

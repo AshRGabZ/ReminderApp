@@ -1,0 +1,21 @@
+# Render Blueprint — lets Render auto-configure the web service from this repo.
+# Deploy: render.com → New + → Blueprint → connect this repo → it reads this file.
+# You'll be prompted to paste ANTHROPIC_API_KEY (it's marked secret, never stored in git).
+
+services:
+  - type: web
+    name: billserver
+    runtime: python
+    rootDir: server # the Python server lives in the server/ subfolder
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.6"
+      - key: MODEL
+        value: claude-sonnet-4-6
+      - key: MOCK
+        value: "false"
+      - key: ANTHROPIC_API_KEY
+        sync: false # secret — you paste it in the Render dashboard, not in git
