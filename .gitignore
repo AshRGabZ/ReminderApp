@@ -221,6 +221,8 @@ __marimo__/
 node_modules/
 mobile/.expo/
 mobile/dist/
+mobile/android/
+mobile/ios/
 npm-debug.log*
 yarn-error.log*
 

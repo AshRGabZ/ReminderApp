@@ -6,4 +6,4 @@
 //
 // LATER (Oracle): replace this with your https address, e.g.
 //   export const SERVER_URL = "https://bills.example.com";
-export const SERVER_URL = "http://192.168.31.114:8000";
+export const SERVER_URL = "https://billserver.onrender.com";

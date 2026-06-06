@@ -480,6 +480,14 @@ export default function App() {
               return (
                 <TouchableOpacity
                   activeOpacity={selectMode ? 0.7 : 1}
+                  delayLongPress={300}
+                  onLongPress={() => {
+                    // Hold an item to enter multi-select mode (and select it)
+                    if (!selectMode) {
+                      setSelectMode(true);
+                      toggleSelect(r.id);
+                    }
+                  }}
                   onPress={() => (selectMode ? toggleSelect(r.id) : undefined)}
                   style={[
                     styles.card,
